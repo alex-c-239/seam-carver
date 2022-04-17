@@ -17,5 +17,11 @@ struct Image
 
     Pixel GetPixel(size_t columnId, size_t rowId) const;
 
+    std::size_t width() const;
+
+    std::size_t height() const;
+
+    bool empty() const;
+
     std::vector<std::vector<Pixel>> m_table;
 };

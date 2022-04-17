@@ -16,3 +16,18 @@ Image::Pixel Image::GetPixel(size_t columnId, size_t rowId) const
 {
     return m_table[columnId][rowId];
 }
+
+std::size_t Image::width() const
+{
+    return m_table.size();
+}
+
+std::size_t Image::height() const
+{
+    return (m_table.empty()) ? 0 : m_table[0].size();
+}
+
+bool Image::empty() const
+{
+    return m_table.empty() || m_table[0].empty();
+}

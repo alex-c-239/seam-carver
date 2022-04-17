@@ -55,4 +55,19 @@ public:
 
 private:
     Image m_image;
+
+    Image::Pixel getPixel(size_t columnId, size_t rowId) const;
+
+    std::size_t nextColumn(size_t columnId) const;
+    std::size_t prevColumn(size_t columnId) const;
+    std::size_t nextRow(size_t rowId) const;
+    std::size_t prevRow(size_t rowId) const;
+
+    struct Node
+    {
+        double energy;
+        std::size_t previous;
+    };
+
+    Seam find_seam(bool is_vertical) const;
 };
